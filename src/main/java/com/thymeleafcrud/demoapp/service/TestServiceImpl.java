@@ -25,7 +25,14 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public Optional<Test> findTestById(long id) {
-        return testRepository.findById(id);
+    public Test findTestById(long id) {
+        Optional<Test> optionalTest = testRepository.findById(id);
+        Test test = null;
+        if(optionalTest.isPresent()) {
+            test = optionalTest.get();
+        } else {
+            throw new RuntimeException(" Employee not found for id :: " + id);
+        }
+        return test;
     }
 }

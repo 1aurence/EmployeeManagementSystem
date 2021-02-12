@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface EmployeeService {
     List<Employee> getAllEmployees();
     Employee saveEmployee(Employee employee);
-    Optional<Employee> getEmployeeById(long id);
+    Employee getEmployeeById(long id);
 }

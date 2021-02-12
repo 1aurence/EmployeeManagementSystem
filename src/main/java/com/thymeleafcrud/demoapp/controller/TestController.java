@@ -31,9 +31,9 @@ public class TestController {
 
     @GetMapping("/testing/test/{id}")
     public String getTestById(Model model, @PathVariable(name = "id") long id) {
-        Optional<Test> test = testService.findTestById(id);
-        if (test.isPresent()) {
-            model.addAttribute("test", test.get());
+        Test test = testService.findTestById(id);
+        if (test != null) {
+            model.addAttribute("test", test);
         } else {
             model.addAttribute("test_id", id);
             return "not_found";

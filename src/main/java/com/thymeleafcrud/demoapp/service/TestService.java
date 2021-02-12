@@ -10,5 +10,5 @@ public interface TestService {
     List<Test> getAllTests();
     Test saveTest(Test test);
 
-    Optional<Test> findTestById(long id);
+    Test findTestById(long id);
 }

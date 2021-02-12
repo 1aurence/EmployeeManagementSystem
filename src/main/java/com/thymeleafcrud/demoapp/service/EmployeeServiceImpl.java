@@ -26,7 +26,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Optional<Employee> getEmployeeById(long id) {
-        return employeeRepository.findById(id);
+    public Employee getEmployeeById(long id) {
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+        Employee employee = null;
+        if (optionalEmployee.isPresent()) {
+            employee = optionalEmployee.get();
+        } else {
+            throw new RuntimeException(" Employee not found for id :: " + id);
+
+        }
+        return employee;
     }
 }
