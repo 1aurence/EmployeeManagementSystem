@@ -6,3 +6,6 @@ Demo web application which displays employee information using Postgres &amp; Sp
 
 ## Employee Form
 ![Employee Form](/photos/employee-add.png)
+
+## Employee Database
+![Employee Database](/photos/employee-db.png)
